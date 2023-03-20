@@ -19,4 +19,6 @@ import Header from './components/Header.vue';
     <!-- content -->
 </template>
 
-<style scoped></style>
+<style lang="scss">
+    @import './assets/scss/global.scss';
+</style>

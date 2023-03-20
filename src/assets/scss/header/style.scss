@@ -1,0 +1,103 @@
+@import "./variables.scss";
+
+.header {
+  font-size: $font-size-default;
+  background-color: #262626;
+  color: #fff;
+
+  .header-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+}
+
+.desktop {
+  .header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .search-input {
+      display: block;
+      height: 32px;
+      border: 1px solid #000;
+      border-radius: 4px;
+      padding: 0 calc($font-size-default + 16px) 0 8px;
+      font-size: $font-size-default;
+    }
+
+    .profile-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .search-button {
+      border: none;
+      background: none;
+      position: absolute;
+      right: 8px;
+      height: 100%;
+      font-size: $font-size-default;
+    }
+  }
+}
+
+.mobile {
+  .header {
+    max-width: 200px;
+
+    .header-item {
+      padding: 16px;
+
+      #bar {
+        cursor: pointer;
+      }
+    }
+    ul {
+      list-style: none;
+      li {
+        position: relative;
+      }
+    }
+
+    .item-link {
+      display: flex;
+      align-items: center;
+      padding: 8px 16px;
+      height: 32px;
+      position: relative;
+      cursor: pointer;
+
+      .label {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        a {
+          text-decoration: none;
+          color: #fff;
+        }
+      }
+
+      &:hover {
+        background: rgb(0, 0, 0);
+      }
+
+    }
+
+    .expand {
+      .label {
+        i {
+          rotate: 180deg;
+        }
+      }
+    }
+  }
+}
+#bar {
+  font-size: 24px;
+  margin-right: 8px;
+}
