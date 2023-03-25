@@ -27,66 +27,48 @@
                               <div id="bar"><i class="fa-solid fa-bars"></i></div>
                               <div id="web-name">Learn VueJs</div>
                         </div>
-                        <ul>
-                              <li>
-                                    <div class="item-link expand">
-                                          <i class="fa-solid fa-house"></i>
-                                          <div class="label">
-                                                <a href="#">Category product</a>
-                                                <i class="fa-solid fa-chevron-up"></i>
-                                          </div>
-                                    </div>
-                                    <ul class="sub-menu hidden">
-                                          <li>
-                                                <div class="item-link">
-                                                      <i class="fa-solid fa-house"></i>
-                                                      <div class="label">
-                                                            <a href="#">Sub item 1</a>
-                                                            <i class="fa-solid fa-chevron-up"></i>
-                                                      </div>
-                                                </div>
-                                          </li>
-                                          <li>
-                                                <div class="item-link">
-                                                      <i class="fa-solid fa-house"></i>
-                                                      <div class="label">
-                                                            <a href="#">Category product</a>
-                                                      </div>
-                                                </div>
-                                          </li>
-                                    </ul>
-                              </li>
-
-                              <li>
-                                    <div class="item-link">
-                                          <i class="fa-solid fa-house"></i>
-                                          <div class="label">
-                                                <a href="#">Category product</a>
-                                                <i class="fa-solid fa-chevron-up"></i>
-                                          </div>
-                                    </div>
-                                    <ul class="sub-menu">
-                                          <li>
-                                                <div class="item-link">
-                                                      <i class="fa-solid fa-house"></i>
-                                                      <div class="label">
-                                                            <a href="#">Category product</a>
-                                                            <i class="fa-solid fa-chevron-up"></i>
-                                                      </div>
-                                                </div>
-                                          </li>
-                                          <li>
-                                                <div class="item-link">
-                                                      <i class="fa-solid fa-house"></i>
-                                                      <div class="label">
-                                                            <a href="#">Category product</a>
-                                                      </div>
-                                                </div>
-                                          </li>
-                                    </ul>
-                              </li>
-                        </ul>
+                        <Menu :menu="menu" />
                   </div>
             </div>
       </header>
 </template>
+
+<script lang="ts">
+import Menu from './Menu/Menu.vue';
+const menu = [
+      {
+            id: 1,
+            label: "Menu 1",
+            children: [
+                  {
+                        id: 3, 
+                        label: "Item 1", 
+                        children: [
+                              {
+                                    id: 4, 
+                                    label: "Item Child 4", 
+                                    parent: 3
+                              }
+                        ]
+                  }
+            ]
+      },
+      {
+            id: 2,
+            label: "Menu 2",
+            parent: 0
+      },
+];
+export default {
+      data() {
+            return {
+                  menu
+            }
+      },
+      components: {
+            Menu
+      },
+      mounted() {
+      }
+}
+</script>

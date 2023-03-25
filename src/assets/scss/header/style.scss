@@ -2,8 +2,8 @@
 
 .header {
   font-size: $font-size-default;
-  background-color: #262626;
-  color: #fff;
+  background-color: $background-color;
+  color: $text-color;
 
   .header-item {
     display: flex;
@@ -44,60 +44,89 @@
     }
   }
 }
-
 .mobile {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 24px;
   .header {
-    max-width: 200px;
-
-    .header-item {
-      padding: 16px;
-
-      #bar {
-        cursor: pointer;
-      }
+    width: 160px;
+    .header-item{
+      padding: 0 16px;
     }
-    ul {
-      list-style: none;
-      li {
+    .menu {
+      display: block;
+
+      .item {
+        border: 0;
         position: relative;
-      }
-    }
 
-    .item-link {
-      display: flex;
-      align-items: center;
-      padding: 8px 16px;
-      height: 32px;
-      position: relative;
-      cursor: pointer;
+        &:hover {
+          background: #000;
+        }
 
-      .label {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        a {
-          text-decoration: none;
-          color: #fff;
+        .item-link {
+          display: flex;
+          align-items: center;
+          height: 40px;
+          padding: 0 16px;
+          cursor: pointer;
+
+          .label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+
+            a {
+              text-decoration: none;
+              color: $text-color;
+            }
+          }
         }
       }
-
-      &:hover {
-        background: rgb(0, 0, 0);
-      }
-
+    }
+    .child {
+      position: absolute;
+      right: 0;
+      transform: translateX(100%);
+      background-color: $background-color;
+      top: 0;
+      width: 100%;
+      display: none;
     }
 
-    .expand {
-      .label {
-        i {
-          rotate: 180deg;
-        }
-      }
+    .item:hover>.child{
+      display: block;
     }
   }
 }
+
 #bar {
   font-size: 24px;
   margin-right: 8px;
+}
+@media (max-width: 575.98px) {
+  
+}
+
+// Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .mobile{
+    display: block;
+  }
+  .desktop{
+    display: none;
+  }
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 991.98px) {
+  
+}
+
+// Large devices (desktops, less than 1200px)
+@media (max-width: 1199.98px) {
+  
 }
