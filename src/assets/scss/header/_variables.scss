@@ -1,3 +1,12 @@
 $font-size-default: 16px;
 $text-color: #fff;
 $background-color: #262626;
+@keyframes toggle{
+      from {
+            display: none;
+      }
+
+      to{
+            display: block;
+      }
+}

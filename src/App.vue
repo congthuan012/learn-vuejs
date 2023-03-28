@@ -15,7 +15,9 @@ import Header from './components/Header.vue';
     <!-- nav menu -->
 
     <!-- content -->
-    <div class="container"></div>
+    <div class="container">
+        <router-view></router-view>
+    </div>
     <!-- content -->
 </template>
 

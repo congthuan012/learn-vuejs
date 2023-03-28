@@ -24,10 +24,10 @@
             <div class="mobile">
                   <div class="header">
                         <div class="header-item" id="right">
-                              <div id="bar"><i class="fa-solid fa-bars"></i></div>
+                              <div v-on:click="handleToggleBar" id="bar"><i class="fa-solid fa-bars"></i></div>
                               <div id="web-name">Learn VueJs</div>
                         </div>
-                        <Menu :menu="menu" />
+                        <Menu v-show="showNavigation" :menu="menu" />
                   </div>
             </div>
       </header>
@@ -41,12 +41,12 @@ const menu = [
             label: "Menu 1",
             children: [
                   {
-                        id: 3, 
-                        label: "Item 1", 
+                        id: 3,
+                        label: "Item 1",
                         children: [
                               {
-                                    id: 4, 
-                                    label: "Item Child 4", 
+                                    id: 4,
+                                    label: "Item Child 4",
                                     parent: 3
                               }
                         ]
@@ -62,13 +62,21 @@ const menu = [
 export default {
       data() {
             return {
-                  menu
+                  menu,
+                  showNavigation: false,
             }
       },
       components: {
             Menu
       },
-      mounted() {
+      methods: {
+            handleToggleBar(){
+                  if(this.showNavigation == true){
+                        this.showNavigation = false;
+                  }else{
+                        this.showNavigation = true;
+                  }
+            }
       }
 }
 </script>
