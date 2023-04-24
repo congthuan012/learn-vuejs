@@ -1,0 +1,49 @@
+.menu {
+    height: 40px;
+    background: black;
+}
+.logo,
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+}
+
+.logo img {
+    width: 100%;
+}
+.avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.menu-link {
+    max-width: 130px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: center;
+    border: 1px solid black;
+}
+.menu-link > a {
+    color: white;
+    text-decoration: none;
+}
+.menu-link:hover,
+.menu-link:hover > a,
+.active,
+.active > a {
+    background: white;
+    color: black;
+}
+.login-form {
+    margin-top: 40px;
+    display: block;
+    width: 40%;
+}
+.error-text{
+    color: red;
+}
